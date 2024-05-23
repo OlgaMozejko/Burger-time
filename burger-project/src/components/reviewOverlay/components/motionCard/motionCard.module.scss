@@ -1,0 +1,12 @@
+.card {
+    width: 30rem;
+    background-color: white;
+    box-shadow: var(--box-shadow-dark);
+    border-radius: 0.5rem;
+    padding: 4rem 3rem;
+
+    @media screen and (min-wdth: 768px) {
+        padding: 4rem 6rem;
+        width: 60rem;
+    }
+}

@@ -1,0 +1,115 @@
+.overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+        text-align: left;
+    }
+}
+
+.color_overlay {
+    background-color: var(--color-blue-pastel);
+    opacity: 0.6;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+//side element
+
+.button_wrapper {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 3;
+
+    @media screen and (min-width: 1024px) {
+        right: unset;
+        transform: translateX(32rem);
+    }
+}
+
+.close_button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    padding: 2rem;
+
+    .icon{
+        transition: transform var(--trasition-time-medium) var(--trasition-ease);
+
+        &::after, &::before {
+            content: "";
+            height: 2rem;
+            width: 0.4rem;
+            border-radius: 0.2rem;
+            background-color: black;
+            position: absolute;
+            transition: transform var(--trasition-time-medium) var(--trasition-ease);
+        }
+
+        &::after {
+            transform: rotate(45deg);
+        }
+
+        &::before {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &:hover {
+
+        .icon {
+
+            &::after {
+                transform: rotate(60deg);
+            }
+    
+            &::before {
+                transform: rotate(-60deg);
+            }
+        }
+    
+    }
+}
+
+.pagination_wrapper {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    z-index: 3;
+
+    @media screen and (min-width: 1024px) {
+        left: unset;
+        transform: translateX(-36rem);
+    }
+}
+
+//main element
+
+.review_wrapper {
+    padding: 4rem 0;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+}
+

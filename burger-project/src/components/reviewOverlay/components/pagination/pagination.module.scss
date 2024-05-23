@@ -1,0 +1,87 @@
+.pagination_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 2rem;
+}
+
+.pagination {
+    width: 4rem;
+    height: 0.3rem;
+    box-shadow: var(--box-shadow-dark);
+    border-radius: 0.5rem;
+    background-color: var(--color-white);
+    transition: background-color var(--transition-time-medium) var(--transition-ease), box-shadow var(--transition-time-fast) var(--transition-ease);
+
+    &.active {
+        box-shadow: var(--box-shadow-light);
+    }
+
+    &.other {
+        height: 2rem;
+        border-radius: 2rem 2rem 0.2rem 0.2rem;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: "";
+            background-color: var(--color-black);
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            bottom: 0.5rem;
+            left: 1rem;
+            opacity: 0.6;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            background-color: var(--color-black);
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            bottom: 0.5rem;
+            right: 1rem;
+            opacity: 0.6;
+        }
+
+        &.active {
+            background-color: var(--color-burger-brown);
+        }
+    }
+
+    &.visual {
+        &.active {
+            background-color: var(--color-burger-yellow);
+        }
+    }
+
+    &.texture {
+        height: 0.6rem;
+
+        &.active {
+            background-color: var(--color-burger-dark-brown);
+        }
+    }
+
+    &.taste {
+
+        &.active {
+            background-color: var(--color-burger-green);
+        }
+      
+    }
+
+    &.photo {
+        height: 1rem;
+        border-radius: 0.2rem 0.2rem 0.5rem 0.5rem;
+
+        &.active {
+            background-color:var(--color-burger-brown);
+        }
+    }
+}
+
+
+
